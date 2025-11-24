@@ -14,7 +14,7 @@ checkpoint_callback = CheckpointCallback(save_freq=1000, save_path='./logs/',
 model = PPO('MlpPolicy', env, verbose=1, device='auto')
 
 # Train the agent
-model.learn(total_timesteps=10000000, callback=checkpoint_callback)
+model.learn(total_timesteps=10000000, callback=checkpoint_callback, progress_bar=True)
 
 # Save the agent
 model.save("ppo_foosball")
