@@ -11,7 +11,7 @@ checkpoint_callback = CheckpointCallback(save_freq=1000, save_path='./logs/',
                                          name_prefix='rl_model')
 
 # Instantiate the agent
-model = PPO('MlpPolicy', env, verbose=1, device='cpu')
+model = PPO('MlpPolicy', env, verbose=1, device='auto')
 
 # Train the agent
 model.learn(total_timesteps=10000000, callback=checkpoint_callback)
